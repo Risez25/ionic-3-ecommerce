@@ -1,0 +1,23 @@
+<ion-navbar color='primary'>
+
+    <button id="notification-button" ion-button right (click)="gotoCarts()">
+        <ion-icon name="cart" color="lightblue" style="zoom:1.3;">
+          <!--<ion-badge id="notifications-badge" color="danger">{{count}}</ion-badge>-->
+        </ion-icon>              
+    </button>
+    <ion-title>
+        Shopee
+    </ion-title>
+    <button ion-button (click)="gotoFavourite()" class="button-right" end>
+        <ion-icon name="heart" color="lightblue" style="zoom:1.3;">
+        </ion-icon>              
+    </button>
+
+
+</ion-navbar>
+<super-tabs id="mainTabs" selectedTabIndex="1" toolbarColor="light" toolbarBackground="primary">
+    <super-tab [root]="profile " icon="person"></super-tab>
+    <super-tab [root]="home" icon="home"></super-tab>
+    <super-tab [root]="about" icon="document"></super-tab>
+
+</super-tabs>

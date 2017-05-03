@@ -1,0 +1,25 @@
+<!--
+  Generated template for the Cart page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>List Item</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="card-background-page">
+    <h2>Item List</h2>
+    <ion-list>
+        <ion-item *ngFor="let item of items" (click)="gotoDetails(item)">
+            <ion-thumbnail item-left>
+                <img [src]="item.image">
+            </ion-thumbnail>
+            <h2>{{item.name}}</h2>
+        </ion-item>
+    </ion-list>
+</ion-content>
