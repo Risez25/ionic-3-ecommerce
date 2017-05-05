@@ -1,8 +1,12 @@
 <ion-content class="card-background-page">
-    <ion-searchbar #myinput color="primary" [(ngModel)]="queryText" (ionInput)="updateSchedule(queryText)" placeholder="Search">
-    </ion-searchbar>
+    <ion-searchbar #myinput [(ngModel)]="searchTerm" (ionInput)="setFilteredItems(myinput.value)"></ion-searchbar>
     <ion-card *ngFor="let item of itemCollection" (click)="gotoCart(item)">
         <img [src]="item.image_category" />
         <div class="card-title">{{item.category}}</div>
     </ion-card>
+    <ion-list>
+        <ion-item>
+        </ion-item>
+    </ion-list>
+
 </ion-content>

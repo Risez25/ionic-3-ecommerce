@@ -1,3 +1,13 @@
 <ion-content padding>
-
+    <ion-searchbar #search (ionInput)="searchAll(search.value)">
+    </ion-searchbar>
+    <ion-list *ngFor="let item of items">
+        <ion-item (click)="gotoDetail(item)">
+            <ion-thumbnail item-left>
+                <img [src]="item.image">
+            </ion-thumbnail>
+            <h2>{{item.name}}</h2>
+            <h2>RM{{item.price}}</h2>
+        </ion-item>
+    </ion-list>
 </ion-content>

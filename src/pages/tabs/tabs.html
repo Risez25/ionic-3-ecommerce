@@ -1,23 +1,22 @@
 <ion-navbar color='primary'>
-
-    <button id="notification-button" ion-button right (click)="gotoCarts()">
+    <ion-list>
+        <ion-item color="primary" no-padding no-lines>
+            <button ion-button right (click)="gotoCarts()" item-left>
         <ion-icon name="cart" color="lightblue" style="zoom:1.3;">
-          <!--<ion-badge id="notifications-badge" color="danger">{{count}}</ion-badge>-->
         </ion-icon>              
     </button>
-    <ion-title>
-        Shopee
-    </ion-title>
-    <button ion-button (click)="gotoFavourite()" class="button-right" end>
+            <ion-title>
+                Shopee
+            </ion-title>
+            <button ion-button (click)="gotoFavourite()" item-right>
         <ion-icon name="heart" color="lightblue" style="zoom:1.3;">
         </ion-icon>              
     </button>
-
-
+        </ion-item>
+    </ion-list>
 </ion-navbar>
-<super-tabs id="mainTabs" selectedTabIndex="1" toolbarColor="light" toolbarBackground="primary">
-    <super-tab [root]="profile " icon="person"></super-tab>
+<super-tabs id="mainTabs" selectedTabIndex="1" showToolbar="false" toolbarColor="light" toolbarBackground="primary">
+    <super-tab [root]="search" icon="search"></super-tab>
     <super-tab [root]="home" icon="home"></super-tab>
-    <super-tab [root]="about" icon="document"></super-tab>
-
+    <super-tab [root]="profile " icon="person"></super-tab>
 </super-tabs>

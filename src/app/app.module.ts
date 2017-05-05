@@ -10,18 +10,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SuperTabsModule } from 'ionic2-super-tabs';
 import { SwipeCardsModule } from 'ng2-swipe-cards';
 import { ItemService } from "../services/item.service";
-import {FavouritePipe } from "../pipes/favourite";
+import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 @NgModule({
   declarations: [
     MyApp,
     TabsPage,
-    FavouritePipe
   ],
   imports: [
     BrowserModule,
     SuperTabsModule.forRoot(),
     IonicModule.forRoot(MyApp),
-    SwipeCardsModule
+    SwipeCardsModule,
+    Ng2FilterPipeModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

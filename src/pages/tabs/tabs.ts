@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ItemService } from "../../services/item.service";
 import { NavController, NavParams, ModalController, ViewController } from "ionic-angular";
 import { Item } from "../../data/item.interface";
-
+import {SuperTabsController} from "ionic2-super-tabs";
 @Component({
   selector: 'page-tabs',
   templateUrl: 'tabs.html'
@@ -15,6 +15,7 @@ export class TabsPage implements OnInit {
   profile = 'Profile';
   favourite = 'Favourite';
   search = 'Search';
+  showToolbar:boolean=false;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,

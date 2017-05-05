@@ -37,8 +37,8 @@ export class Details {
   }
   addToCarts(item,count){
     let toast = this.toastCtrl.create({
-      message: 'Iteam was added to cart',
-      duration: 1000,
+      message: 'Item added to cart',
+      duration: 2000,
       position: 'middle'
     });
 
@@ -49,11 +49,20 @@ export class Details {
     toast.present();
     this.itemService.addItemToCarts(item);
     this.itemService.addCountToCarts(count);
-    console.log(item);
-    console.log(count);
   }
 
   addToFavourite(item){
+    let toast = this.toastCtrl.create({
+      message: 'Item added to wishlist',
+      duration: 2000,
+      position: 'middle'
+    });
+
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+
+    toast.present();
     //this.event.publish('user:created', item);
     this.itemService.addToFavourite(item);
   }

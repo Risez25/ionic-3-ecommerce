@@ -17,6 +17,7 @@ import { Item } from "../../data/item.interface";
 export class Carts {
   items: Item[] =[];
   count:number;
+  total:number;
   constructor(public navCtrl: NavController, public navParams: NavParams,private itemService:ItemService,public viewCtrl: ViewController) {
     this.items = this.itemService.getCarts();
     this.count = this.itemService.getCount();

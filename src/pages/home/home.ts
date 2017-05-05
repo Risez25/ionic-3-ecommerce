@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ItemService } from "../../services/item.service";
 import { Item } from "../../data/item.interface";
 import item from "../../data/item";
+import { Items } from "../../data/items.interface";
 
 @IonicPage()
 @Component({
@@ -10,10 +11,11 @@ import item from "../../data/item";
   templateUrl: 'home.html',
 })
 export class Home implements OnInit{
-  itemCollection:{category:String,image_category:any,items:Item[]}[];;
+  itemCollection:Items[]=[];
   item:Item;
   queryText:any;
   test:any;
+  searchTerm: string = '';
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -23,13 +25,16 @@ export class Home implements OnInit{
   }
 
   ngOnInit() {
-    this.itemCollection = item;
+    this.itemCollection = this.itemService.getAllItem();
     console.log(this.itemCollection);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Home');
   }
+  async setFilteredItems(input) {
+        this.itemCollection = await this.itemService.filterItems(input);
+    }
 
   gotoCart(item){
     this.navCtrl.push('Cart',{

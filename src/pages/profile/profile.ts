@@ -13,7 +13,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'profile.html',
 })
 export class Profile {
-
+  test:string;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

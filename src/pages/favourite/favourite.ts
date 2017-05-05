@@ -44,9 +44,7 @@ export class Favourite implements OnInit {
   }
   onTabSelect(ev: any) {
     console.log('Tab selected', 'Index: ' + ev.index, 'Unique ID: ' + ev.id);
-    if(ev.index == 2){
-      this.favourites = this.itemService.getAllItem();
-    }
+    
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad Favourite');
